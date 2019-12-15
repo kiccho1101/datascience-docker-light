@@ -1,0 +1,11 @@
+version: "3.2"
+services:
+  datascience-light:
+    build: .
+    image: youodf/datascience-light
+    ports:
+      - "8888:8888"
+    volumes:
+     - ./notebook:/app/notebook
+     - ./src:/app/src
+    command: jupyter notebook --ip='0.0.0.0' --allow-root --no-browser
